@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/node_modules/mocha/mocha.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- Mocha tests in the browser use unicode symbols for bullet points
+so unless you want weird character bullet points, we add this. It doesn't
+break anything with or without it. -->
+    <!-- This is where mocha inserts the test results that are styled with the css file above -->
+    <div id="mocha"></div>
+    <!-- This is where any fixtures we need for the test will be inserted into. Naturally, we won't want to cover the mocha test results so we position this bad boy off screen. -->
+    <div style="position: absolute; top: -10000px; left: -10000px;">
+        <main>
+            <header class="main-header">
+                <h1 class="vegans-heading">
+                    Vegans
+                </h1>
+                <dl>
+                    <dt class="dt-messages-number"></dt>
+                    <dd class="dd-messages"></dd>
+                    <dt class="dt-users-number"></dt>
+                    <dd class="dd-users"></dd>
+                </dl>
+            </header>
+
+            <div class="scroll">
+                <!--chat baord-->
+                <ol>
+
+                    <!-- <li>
+                        <div class="container-div">
+                            <div class="user-image-div">
+                                <img src="images/Layer 4.png" alt="" class="user-image">
+                            </div>
+                            <div class="message-on-chatboard" tabindex="0">
+                                <cite class="username">User Name</cite>
+                                <time class="time"> 16:00</time>
+                                <button class="close" aria-label="delete message" tabindex="0"></button>
+                                <div><span class="message-content">message content message content message content message content message content message content message content message content </span>
+                            </div></div>
+                        </div>
+                    </li>-->
+                </ol>
+            </div>
+
+            <form class="message-form">
+                <div class="Growable js-growable">
+                    <pre class="tr"><span class="sp"></span><br></pre>
+                    <textarea class="tr" onkeyup="keyUp()"></textarea>
+                </div>
+
+                <button type="submit" aria-label="submit message" class="send-message-button">
+                </button>
+            </form>
+        </main>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+
+                <header class="who-are-you-container">
+                    <h1 class="who-are-you">
+                        Who are you?
+                    </h1>
+                </header>
+
+                <form class="register-form">
+                    <div class="fullname-div">
+                        <label class="username-label">Full name:</label>
+                        <input class="username-input" type="text" name="name">
+                    </div>
+                    <div class="email-div">
+                        <label class="email-label">Email:</label>
+                        <input class="email-input" type="text" name="email">
+                    </div>
+
+                    <div class="modal-buttons-div">
+                        <button type="stay-anonymous" class="anonymous-btn">Stay Anonymous</button>
+                        <button type="submit" class="save-btn">Save</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- We need to insert our testing dependencies here -->
+    <script src="/node_modules/chai/chai.js"></script>
+    <!--<script src="../node_modules/sinon-chai/lib/sinon-chai.js"></script>-->
+    <script src="/node_modules/sinon/pkg/sinon.js"></script>
+    <script src="/node_modules/mocha/mocha.js"></script>
+    <!-- We will using BDD-style assertions. See Mocha documentation for more info -->
+    <script>
+        mocha.setup('bdd');
+    </script>
+    <!-- The source file we will be testing! Don't forget the data-cover attribute so Blanket will know which file will need to be instrumented for coverage. -->
+    <script src="/client/scripts/main.js"></script>
+    <!-- Our test suite needs to be after the source file, of course -->
+    <script src="test.js"></script>
+    <script>
+        // For Blanket add coverage in our Mocha CLI tests (node environment),
+        // we need to add this reporter
+        //if (window.PHANTOMJS) {
+        // blanket.options("reporter", "../node_modules/grunt-blanket-mocha/support/grunt-reporter.js");
+        //}
+        // If we're in in the browser
+        //else {
+        mocha.run();
+//}
+    </script>
+
+</body>
+
+</html>

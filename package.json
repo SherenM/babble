@@ -1,0 +1,20 @@
+{
+  "name": "babble",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/server & test/client"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.5.3"
+  },
+  "dependencies": {
+    "chai": "^4.1.2"
+  },
+  "description": ""
+}

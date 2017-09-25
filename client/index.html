@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <LINK rel="stylesheet" type="text/css" href="styles/main.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vegans - Babble</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="logo-header">
+            <img src="images/logo.png" aria-label="Babble Logo" alt="logo" class="logo">
+        </header><!--
+        --><nav></nav><!--
+        --><main>
+            <header class="main-header">
+                <h1 class="vegans-heading">
+                    Vegans
+                </h1>
+                <dl>
+                    <dt class="dt-messages-number"><img alt="message" src="images/messages.png" title="messages number" aria-label="messages number" class="dt-messages-img"></dt>
+                    <dd class="dd-messages"></dd>
+                    <dt class="dt-users-number"><img alt="user" src="images/users.png" title="users number" aria-label="users number" class="dt-users-img" ></dt>
+                    <dd class="dd-users"></dd>
+                </dl>
+            </header>
+
+            <div class="scroll">
+                <!--chat baord-->
+                <ol>
+
+                   <!-- <li>
+                        <div class="container-div">
+                            <div class="user-image-div">
+                                <img src="images/Layer 4.png" alt="" class="user-image">
+                            </div>
+                            <div class="message-on-chatboard" tabindex="0">
+                                <cite class="username">User Name</cite>
+                                <time class="time"> 16:00</time>
+                                <button class="close" aria-label="delete message" tabindex="0"></button>
+                                <div><span class="message-content">message content message content message content message content message content message content message content message content </span>
+                            </div></div>
+                        </div>
+                    </li>-->
+                </ol>
+            </div>
+
+            <form class="message-form" >
+                <div class="Growable js-growable">
+                    <pre class="tr"><span class="sp"></span><br></pre>
+                    <textarea class="tr" onkeyup="keyUp()"></textarea>
+                </div>
+
+                <button  type="submit" aria-label="submit message" class="send-message-button">
+                    <img src="images/arrow.png" alt="top" class="arrow-img">                  
+                </button>
+            </form>
+        </main>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            
+            <header class="who-are-you-container">
+                <h1 class="who-are-you">
+                    Who are you?
+                </h1>
+            </header>
+
+            <form class="register-form" >
+                <div class="fullname-div">
+                    <label class="username-label">Full name:</label>
+                    <input class="username-input"  type="text" name="name" >
+                </div>
+                <div class="email-div">
+                    <label class="email-label" >Email:</label>
+                    <input class="email-input"  type="text" name="email" >
+                </div>
+
+                <div class="modal-buttons-div">
+                    <button class="anonymous-btn">Stay Anonymous</button>
+                    <button  type="submit" class="save-btn">Save</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+<script src="scripts/main.js"> </script>
+
+</body>
+</html>

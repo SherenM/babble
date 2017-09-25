@@ -1,0 +1,651 @@
+html{
+    height: 100%; 
+    width: 100%;
+}
+body{
+    width: 100%; 
+    height: 100%; 
+    background-color: rgb(249, 249, 249); 
+    margin: 0; 
+    padding: 0;
+    overflow: hidden;
+}
+.container{
+    width: 100%; 
+    height: 100%; 
+    position: relative;
+}
+@media screen and (min-width:320px)
+{
+    html{ 
+        font-size: 50%;
+    }
+    .logo-header{
+        width: 100%; 
+        height: 6.25rem; 
+        background-color: rgb(53, 55, 68); 
+    }
+    .logo{
+        position: absolute; 
+        width: 10.34375rem; 
+        height: 4.40625rem; 
+        top: 0.9375rem;
+        bottom: 0.90625rem; 
+        left:  0.84375rem;
+    }
+    nav{
+        display: none;
+        visibility: hidden;
+    }
+    main{
+        width: 100%; 
+        height: calc(100% - 6.25rem); 
+        margin: 0; 
+        padding: 0;
+        position: relative;
+    }
+    .main-header{
+        top: 1.4rem; 
+        padding-left: 0.9375rem;
+        padding-right: 1.1875rem;
+        position: relative;
+       
+    }
+    .vegans-heading{
+        display: inline-block; 
+        font-family: Nunito;
+        color:  #292929;
+        font-size: 1.40625rem;
+        font-weight: 400;
+        text-align: left; 
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+    }
+    dl{
+        float: right;
+        position: absolute;
+        right: 1.1875rem;
+        bottom: 0;
+        -webkit-margin-before: 0; 
+        -webkit-margin-after: 0;
+    }
+    .dt-messages-number{
+            display:inline-block; 
+            bottom: 0; 
+            margin-right: 0.15625rem;
+    }
+    .dt-messages-img{
+        width: 0.84375rem; 
+        height:0.6875rem;
+        bottom: 0;
+    }
+    .dd-messages{
+        display:inline-block; 
+        font-family: Nunito; 
+        color: #353744; 
+        font-size: 0.9375rem; 
+        font-weight: 700; 
+        text-align: right; 
+        bottom: 0;
+        margin-right: 0.5rem; 
+        -webkit-margin-start: 0;
+    }
+    .dt-users-number{
+        display:inline-block; 
+         
+        bottom: 0;
+        margin-right: 0.1875rem; 
+    }
+    .dt-users-img{
+        bottom: 0;
+        width: 0.65625rem; 
+        height:0.875rem;
+    }
+    .dd-users{
+        display:inline-block; 
+        font-family: Nunito; 
+        color: #353744; 
+        font-size: 0.9375rem; 
+        font-weight: 700; 
+        text-align: right; 
+        bottom: 0;
+        -webkit-margin-start: 0;
+
+    }
+    .scroll {
+        height: 75%; 
+        overflow-y:scroll; 
+        overflow-x: hidden; 
+        width: calc(100% - 0.875rem);
+        position: absolute; 
+        top: 3.75rem; 
+        left: 0.625rem; 
+        right: 0.25rem; 
+    }
+    .scroll::-webkit-scrollbar {
+        width: 0.46875rem;
+        background-color:  #ffffff;
+        border-radius: 10px;
+    }
+
+    .scroll::-webkit-scrollbar-track {
+        border-radius: 10px;
+
+    }
+
+    .scroll::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        border-style: solid;
+        border-width: 1px;
+        border-color:  #d7d7d7;
+        background-color:  #ebedec;
+        width: 0.46875rem;
+        bottom: 0;
+    }
+
+    ol{
+        list-style-type: none; 
+        -webkit-padding-start: 0; 
+        -webkit-margin-before: 0; 
+        -webkit-margin-after: 0; 
+       
+    }
+    li{
+        display: table;
+        width: 98%;
+        margin-bottom: 10px;
+    }
+    .container-div{
+        position: relative;
+        display: table-row;
+        width: 100%; 
+        height: auto;
+    }
+    .user-image-div{
+        display: table-cell;
+       /* width: 2.25rem;
+        max-width: 2.25rem;*/
+        width: 2.25rem; 
+        height: 2.25rem;
+        vertical-align: top;
+        margin : 2px;
+    }
+    .user-image{
+        width: 2.25rem; 
+        height: 2.25rem;
+        border-radius: 50%;
+    }
+    .message-on-chatboard{
+        position: relative;
+        display: table-cell;
+        border-radius: 0.5625rem;
+        border-style: solid;
+        border-width: 0.03125rem;
+        border-color:  #d7d7d7;
+        background-color:  #ffffff; 
+        min-width: 65.4%; 
+        max-width: 81.4% ; 
+        word-wrap: break-word;
+        margin-left: 0.59375rem;
+        height: auto;
+        float: left;
+    }
+    .username{
+        font-family: Nunito;
+        color:  #202729;
+        font-size: 0.9375rem;
+        font-weight: 700;
+        text-align: right; 
+        font-style: normal; 
+        display: inline-block;
+        margin-left: 0.53125rem; 
+        margin-top: 0.53125rem; 
+        margin-right: 0.65625rem;
+    } 
+    .time{
+        font-family: Nunito;
+        color:  #999999;
+        font-size: 0.75rem;
+        font-weight: 400;
+        text-align: left; 
+        margin-top: 0.6875rem;
+        margin-right: 10px;
+    }
+    .close{
+        display: inline-block; 
+        padding: 0; 
+        background: transparent;
+        border: none; 
+        margin-top: 0.53125rem; 
+        margin-right: 0.53125rem; 
+        float: right; 
+        /*width: 0.53125rem; 
+        height: 0.53125rem; */
+        background-image: url('/client/images/delete.png'); 
+        background-size: 100% 100%;
+
+
+        -webkit-clip-path: inset(50%);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        width: 1px;
+        white-space: nowrap;
+    }
+    /*.close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }*/
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+
+        width: 0.53125rem; 
+        height: 0.53125rem; 
+        
+        clip: auto;
+        -webkit-clip-path: none;
+        clip-path: none;
+        overflow: visible;
+        position: static;
+        white-space: inherit;
+    }
+    /*.close:focus{
+        display: inline-block;
+    }*/
+    .message-content{
+        font-family: Nunito;
+        color:  #616161;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        line-height: 1.25rem;
+        text-align: left; 
+        display: block;
+        position: relative;
+        max-width: calc(100% - 1.125rem);
+        margin-left: 0.53125rem; 
+        margin-top: 0.5625rem; 
+        margin-right: 0.59375rem; 
+        margin-bottom:0.375rem;
+        word-break:break-all;
+        white-space:normal;
+        
+    }
+    
+    .message-on-chatboard:hover , .message-on-chatboard:focus{
+        background-color:  #ebedec;
+    }
+    .message-on-chatboard:hover .username, .message-on-chatboard:focus .username{
+        margin-left: 0.5625rem;
+        margin-top: 0.34375rem;
+        margin-right: 0.625rem;
+    }
+    .message-on-chatboard:hover .time, .message-on-chatboard:focus .time{
+        margin-top: 0.5rem;
+    }
+    .message-on-chatboard:hover .close, .message-on-chatboard:focus .close{
+        width: 0.53125rem; 
+        height: 0.53125rem; 
+        
+        clip: auto;
+        -webkit-clip-path: none;
+        clip-path: none;
+        overflow: visible;
+        position: static;
+        white-space: inherit;
+    }
+    .message-on-chatboard:hover .message-content, .message-on-chatboard:focus .message-content{
+        margin-left: 0.5625rem;
+        margin-top: 0.75rem;
+        margin-right: 0.5625rem;
+    }
+    .message-form{
+        position: absolute;
+        bottom: 0.875rem;  
+        display: flex; 
+        width: 100%;
+    }
+    .Growable {
+        max-height: 300px;
+        overflow: hidden;
+        width:83%; 
+        min-height: 4.28125rem ; 
+        border-radius: 0.5625rem; 
+        position: relative; 
+        border-style: solid;
+        border-width: 1px;
+        border-color:  #d7d7d7;
+        background-color:  #ffffff; 
+        left: 0.90625rem; right: 0.875rem;
+    }
+    .Growable textarea,
+    .Growable pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-family: Nunito;
+        color:  #616161;
+        font-size: 0.9375rem;/* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1.25rem;/* Approximation due to font substitution */
+        text-align: left;  
+        width: calc(100% - 0.5625rem - 1.1875rem);
+        height: calc(100% - 0.5625rem - 0.375rem);
+        margin: 0;
+        padding: 0.5625rem 1.1875rem 0.375rem 0.5625rem;
+    }
+    .Growable textarea {
+        resize: none;
+        border: none;
+        position: absolute;
+        top: 0; left: 0;
+        overflow: visible;
+        font-family: Nunito;
+        color:  #616161;
+        font-size: 0.9375rem;/* Approximation due to font substitution */
+        font-weight: 400;
+        line-height: 1.25rem;/* Approximation due to font substitution */
+        text-align: left;  
+        resize: none;
+        margin:0;
+    }
+    .Growable textarea:focus{
+        border: 0 none #FFF;
+        outline:none;
+    }
+    .send-message-button{
+        position: absolute;  
+        border: none;  left: 87%; 
+        width: 2.8125rem; height: 2.8125rem;
+        background-color: transparent;
+        background-image: url('/client/images/circle.png');
+        background-position: center;  
+        background-size: 100% 100%; 
+        align-self: center; padding: 0;
+    }
+    .arrow-img{
+        width: 1.28125rem;
+        height: 1.09375rem;
+        position: absolute; left:0.9375rem; top: 0.875rem;
+        margin: 0 auto;
+    }
+    .modal {
+        display: block; 
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4); 
+    }
+    .modal-content{
+        background-color: rgb(249, 249, 249);
+        border-radius: 1px;
+        width: 88.7%; 
+        height: 89.3%;
+        position: relative;
+        margin: 0;
+        display: block;
+        left: 5.3%;
+        top: 6.3%;
+    }
+    .who-are-you-container{
+        display: inline-block; 
+        position: absolute; 
+        left:3.5546rem; 
+        top: 3.5625rem;
+    }
+    .who-are-you{
+        font-family: Nunito;
+        color:  #31333F;
+        font-size: 1.60625rem;
+        font-weight: 500;
+        text-align: left; align-self: center; margin: 0;
+    }
+    .register-form{
+        display: inline-block; 
+        position: relative;left:3.46875rem; bottom: 3.09375rem; right: 3.21875rem;  top: 7.65625rem; 
+        width: calc(100% - 3.46875rem - 3.21875rem); height: calc(100% - 7.65625rem - 3.09375rem);
+    }
+    .username-label , .email-label{
+        font-family: Nunito; color: #83858c; display: block;  
+    }
+    
+    .username-input , .email-input{
+        width: 50%; display: block; padding: 2.5px;
+        height: 8px;
+        border:0.5px solid #f2f2f2;
+        border-radius: 4px;
+        font-family: Nunito;
+        color:  #202729;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        text-align: left; 
+        background-color: rgb(255, 255, 255);
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus
+    input:-webkit-autofill, 
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+        background-color: rgb(255, 255, 255) !important;
+    }
+    .fullname-div , .email-div{
+        width: 100%;
+    }
+    .username-input{
+        margin-top: 0.9375rem; margin-bottom:2.59375rem;  
+    }
+    .email-input{
+        margin-top: 0.78125rem;
+    }
+    .modal-buttons-div{
+        position: absolute; 
+        width: 100%;
+        bottom: 3.09375rem; 
+        right: 3.21875rem; 
+    }
+    .anonymous-btn , .save-btn{
+        font-family: Nunito; 
+        font-size: 0.975rem;
+        border: none;
+        border-radius: 1px;
+        font-weight: 300; 
+        padding-bottom: 11px;
+        text-align: center;
+        height: 1.3125rem;
+        vertical-align: middle;
+        position: absolute; bottom:0; 
+    }
+    .save-btn{
+       background:  linear-gradient(to bottom, #87d84e 0%, #56a572 100%);
+       color: #ffffff;
+       padding-left: 1.40rem; padding-right: 1.40rem;
+       right: 0; 
+    }
+    .anonymous-btn{
+        color: #31333F; 
+        background: linear-gradient(to bottom, rgb(205, 205, 205) 0%, rgb(183, 183, 183) 100%);
+        padding-left: 0.8125rem; padding-right: 0.8125rem; right:5.280rem;
+
+    }
+}
+
+@media screen and (min-width: 638px){
+    html{
+        font-size: 100%;
+    }
+    .logo{
+        position: absolute; 
+        width: 13%; 
+        height: 4.40625rem; 
+        top: 0.9375rem;
+        bottom: 0.90625rem; 
+        left:  0.84375rem;
+    }
+    nav{
+        display: inline-block;
+        visibility: visible;
+        background: rgb(97, 211, 145);
+        position: relative;
+        width: 18%;
+        height: calc(100% - 6.25rem); 
+    }
+    main{
+        width: 82% ;
+        height: calc(100% - 6.25rem);
+        float: right;
+        position: relative;
+    }
+    .message-on-chatboard{
+        max-width: calc(600px - 0.59375rem );
+        min-width: unset;
+        padding-right: 0.59375rem;
+    }
+    .modal-content{
+        background-color: rgb(249, 249, 249);
+        border-radius: 1px;
+        width: 40%; /**********/
+        height: 32%;/**********/
+        position: relative;
+        margin: 0;
+        display: block;
+        left: 32%;/**********/
+        top: 33%;/**********/
+    }
+    .who-are-you-container{
+        display: inline-block; 
+        position: relative; /**********/
+        left:  5%; /**********/
+        top: 10%;/**********/
+    }
+    .who-are-you{
+        font-family: Nunito;
+        color:  #31333F;
+        font-size: 1.60625rem;
+        font-weight: 500;
+        text-align: left; align-self: center; margin: 0;
+    }
+    .register-form{
+        display: inline-block; 
+        position: relative;
+        /**************************/
+        left: 5% ; 
+        bottom: 13%; 
+        right: 6%;  
+        top: 16%; 
+        width: 87%;
+         height: 64%;
+    }
+    .fullname-div , .email-div{
+        width: 100%;
+        display: block;
+    }
+    .fullname-div{
+        margin-top: 4px;
+    }
+    .email-div{
+        margin-top: 10px; 
+    }
+    .username-label , .email-label{
+        font-family: Nunito; 
+        color: #83858c; 
+        /*************/
+        display: inline;  
+    }
+    .username-input , .email-input{
+        width: 63%; 
+        display: inline-block; /*********/
+        padding: 2.5px;/*********/
+        height: 18px;
+        border:0.5px solid #f2f2f2;
+        border-radius: 8px;
+        font-family: Nunito;
+        color:  #202729;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        text-align: left; 
+        background-color: rgb(255, 255, 255);
+        position: absolute; right: 0;
+    }
+    .username-input{
+        margin-top: auto; margin-bottom: auto;  
+    }
+    .email-input{
+        margin-top: auto;
+    }
+    .modal-buttons-div{
+        position: absolute; 
+        width: 100%;
+        /**********/
+        bottom: unset; 
+        right: 0; 
+        top: 6rem;
+    }
+    .anonymous-btn , .save-btn{
+        font-family: Nunito; 
+        font-size: 0.9rem;
+        border: none;
+        border-radius: 1px;
+        font-weight: 300; 
+        padding-bottom: ''; /*******/
+        text-align: center;
+        height: '';/***********/
+        vertical-align: middle;
+        position: absolute; bottom:0; 
+
+    }
+    .save-btn{
+       background:  linear-gradient(to bottom, #87d84e 0%, #56a572 100%);
+       color: #ffffff;
+       padding-left: 1.1rem; padding-right: 1.1rem; /********/
+       right: 0; 
+    }
+    .anonymous-btn{
+        color: #31333F; 
+        background: linear-gradient(to bottom, rgb(205, 205, 205) 0%, rgb(183, 183, 183) 100%);
+        padding-left: 0.4rem; padding-right: 0.4rem; 
+        right: 4.9rem;/******/
+
+    }
+
+    .message-form{
+        bottom: 0;
+        background-color: white;
+        border-top: 1px solid rgb(216, 216, 216);
+    }
+    .Growable {
+        border: unset;
+    }
+    .scroll{
+        height: 70%;
+    }
+    .main-header{
+        top: 0.9rem;
+        padding-left: 2.5%; 
+    }
+    .send-message-button{
+        right: 2.3rem;
+        left: unset;
+    }
+    .close{
+        position: relative;
+        top: 5.5px;
+        margin-right: unset;
+    }
+
+}
+
+
+
+
