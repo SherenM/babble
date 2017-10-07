@@ -3,83 +3,34 @@
 
 window.addEventListener('load', function () {
 	var b = localStorage.getItem("babble");
+	console.log(b);
+	if ( b == null || JSON.parse(b).currentMessage == null) { // || b == "{}" || b == "null" || b == "") {
+		var emptyBabble={
+			currentMessage : null ,
+			userInfo : {
+				name : null , 
+				email : null
+			}
+		};
+		localStorage.setItem("babble", JSON.stringify(emptyBabble));
 
-	if (b === null || b === "{}" || b === "null" || b === "") {
-		//console.log("is null");
-		localStorage.setItem("babble", "{}");
-		//cls = 0;
 	} else {
 		statsPolling();
-		/*console.log(b);
-		console.log("exists");
-		var r;
-		r = JSON.parse(b).cnt + 1;
-		console.log("name: " + JSON.parse(b).userInfo.name);
-		//JSON.parse(localStorage.babble).cnt = r;
-		console.log("before : " + JSON.parse(localStorage.babble).cnt);
-		var updatedLocal = {
-			currentMessage: JSON.parse(localStorage.babble).currentMessage,
-			userInfo: {
-				name: JSON.parse(b).userInfo.name,
-				email: JSON.parse(b).userInfo.email
-			},
-			cnt: r
-		}
-		localStorage.setItem("babble", JSON.stringify(updatedLocal));
-		console.log("after : " + JSON.parse(localStorage.babble).cnt);*/
+
 		var container = document.querySelector('.js-growable');
 		var area = container.querySelector('textarea');
 		var clone = container.querySelector('span');
 		area.value = JSON.parse(localStorage.babble).currentMessage;
 		clone.textContent = JSON.parse(localStorage.babble).currentMessage;
-		//document.getElementsByTagName('textarea')[0].innerText=JSON.parse(localStorage.babble).currentMessage;
-		console.log("textarea val: " + document.getElementsByTagName('textarea')[0].value);
 		document.getElementsByClassName('email-input')[0].value = '';
 		document.getElementsByClassName('modal')[0].style.display = 'none';
 		document.getElementsByClassName('username-input')[0].value = '';
 		document.getElementsByClassName('modal')[0].style.visibility = 'hidden';
 		document.getElementsByClassName('modal')[0].setAttribute("aria-hidden", "true");
 		messagesPolling();
-
-
-
 	}
-	//cls = 0;
-	//messagesPolling();
-	//statsPolling();
 }, false);
-
-//window.addEventListener('onbeforeunload ', logData, false);
-
-
-/*window.addEventListener('unload', logData, false);
-
-function logData() {
-	var b = localStorage.babble;
-
-	if (b != null && b != "null" && b != "{}") {
-		if (JSON.parse(b).cnt === 1) {
-			console.log("closed");
-			console.log(JSON.parse(b).userInfo.email);
-			navigator.sendBeacon("http://localhost:9000/log", JSON.stringify({ email: JSON.parse(b).userInfo.email, currentMessage: JSON.parse(b).currentMessage }));
-			localStorage.removeItem("babble");
-			localStorage.clear();
-		} else {
-			var updatedLocal = {
-				currentMessage: JSON.parse(localStorage.babble).currentMessage,
-				userInfo: {
-					name: JSON.parse(b).userInfo.name,
-					email: JSON.parse(b).userInfo.email
-				},
-				cnt: JSON.parse(b).cnt - 1
-			}
-			localStorage.setItem("babble", JSON.stringify(updatedLocal));
-		}
-	}
-
-}*/
-
-console.log("in client");
+//console.log("in client");
 
 makeGrowable(document.querySelector('.js-growable'));
 function makeGrowable(container) {
@@ -230,7 +181,6 @@ window.Babble = {
 					document.getElementsByClassName('username-input')[0].innerHTML = '';
 					document.getElementsByClassName('modal')[0].style.visibility = 'hidden';
 					document.getElementsByClassName('modal')[0].setAttribute("aria-hidden", "true");
-					console.log("response : " + httpRequest.responseText);
 					var b = localStorage.babble, n = "", e = "", c = "";
 
 					if (b != null && b != "{}" && b != "null") {
@@ -323,7 +273,7 @@ function messagesPolling() {
 			window.Babble.msgCounter = Math.max.apply(Math, res.map(function (o) { return o.id; })); //will return the newst id number 
 			//do the callback things 
 			var chatList = document.getElementsByTagName('ol')[0];
-			var i,listItem, contDiv, imageDiv, userImage, msgDiv, ct, tm, btn, spn, spanDiv;
+			var i, listItem, contDiv, imageDiv, userImage, msgDiv, ct, tm, btn, spn, spanDiv;
 			for (i = 0; i < res.length; i++) {
 				listItem = document.createElement('li');
 				listItem.setAttribute("id", "msg" + res[i].id);
@@ -367,10 +317,7 @@ function messagesPolling() {
 				spn = document.createElement('span');
 				spn.setAttribute("class", "message-content");
 				spn.innerHTML = res[i].message;
-				/*spanDiv=document.createElement('div');
-				spanDiv.setAttribute('class', 'spanDiv');
-				spanDiv.appendChild(spn);
-				*/
+				
 				msgDiv.appendChild(ct);
 				msgDiv.appendChild(tm);
 				if (res[i].email != "" && res[i].email === JSON.parse(localStorage.getItem("babble")).userInfo.email) {
@@ -395,12 +342,9 @@ function messagesPolling() {
 }
 
 function statsPolling() {
-	//console.log("in statsPolling client function");
 	window.Babble.getStats(function (res) {
 		//update the stats by classes
-		//console.log("the request is sent , see server console..");
 		if (res != "{}" && res != "") {
-			//var parsedRes = JSON.parse(res);
 			document.getElementsByClassName('dd-messages')[0].innerHTML = res.messages;
 			document.getElementsByClassName('dd-users')[0].innerHTML = res.users;
 
@@ -410,8 +354,6 @@ function statsPolling() {
 }
 
 function removeMessage(msgItem, id) {
-	console.log(msgItem);
-	console.log(id);
 	window.Babble.deleteMessage(id, function (flag) {
 		msgItem.parentNode.removeChild(msgItem);
 	});
@@ -439,7 +381,5 @@ function keyUp() {
 		},
 		cnt: JSON.parse(localStorage.babble).cnt
 	}
-	//JSON.parse(localStorage.babble).currentMessage=val; ///////////check this 
 	localStorage.setItem("babble", JSON.stringify(updatedLocal));
-	console.log("current message is: " + JSON.stringify(JSON.parse(localStorage.babble).currentMessage));
 }
