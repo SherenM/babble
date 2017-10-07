@@ -219,9 +219,7 @@ body{
         margin-top: 0.53125rem; 
         margin-right: 0.53125rem; 
         float: right; 
-        /*width: 0.53125rem; 
-        height: 0.53125rem; */
-        background-image: url('/client/images/delete.png'); 
+        background-image: url('/images/delete.png'); 
         background-size: 100% 100%;
 
 
@@ -232,12 +230,7 @@ body{
         width: 1px;
         white-space: nowrap;
     }
-    /*.close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }*/
+    
     .close:hover,
     .close:focus {
         color: black;
@@ -254,9 +247,7 @@ body{
         position: static;
         white-space: inherit;
     }
-    /*.close:focus{
-        display: inline-block;
-    }*/
+    
     .message-content{
         font-family: Nunito;
         color:  #616161;
@@ -361,7 +352,7 @@ body{
         border: none;  left: 87%; 
         width: 2.8125rem; height: 2.8125rem;
         background-color: transparent;
-        background-image: url('/client/images/circle.png');
+        background-image: url('/images/circle.png');
         background-position: center;  
         background-size: 100% 100%; 
         align-self: center; padding: 0;
@@ -417,8 +408,10 @@ body{
     }
     
     .username-input , .email-input{
-        width: 50%; display: block; padding: 2.5px;
-        height: 8px;
+        width: 50%;
+        display: block;
+        padding: 2.5px;
+        height: 10px;
         border:0.5px solid #f2f2f2;
         border-radius: 4px;
         font-family: Nunito;
@@ -513,33 +506,18 @@ body{
         padding-right: 0.59375rem;
     }
     .modal-content{
-        background-color: rgb(249, 249, 249);
-        border-radius: 1px;
-        width: 40%; /**********/
-        height: 32%;/**********/
-        position: relative;
-        margin: 0;
-        display: block;
-        left: 32%;/**********/
-        top: 33%;/**********/
+        width: 40%; 
+        height: 32%;
+        left: 32%;
+        top: 33%;
     }
     .who-are-you-container{
-        display: inline-block; 
-        position: relative; /**********/
-        left:  5%; /**********/
-        top: 10%;/**********/
+       position: relative; 
+        left:  5%; 
+        top: 10%;
     }
-    .who-are-you{
-        font-family: Nunito;
-        color:  #31333F;
-        font-size: 1.60625rem;
-        font-weight: 500;
-        text-align: left; align-self: center; margin: 0;
-    }
+    
     .register-form{
-        display: inline-block; 
-        position: relative;
-        /**************************/
         left: 5% ; 
         bottom: 13%; 
         right: 6%;  
@@ -548,7 +526,6 @@ body{
          height: 64%;
     }
     .fullname-div , .email-div{
-        width: 100%;
         display: block;
     }
     .fullname-div{
@@ -558,25 +535,15 @@ body{
         margin-top: 10px; 
     }
     .username-label , .email-label{
-        font-family: Nunito; 
-        color: #83858c; 
-        /*************/
         display: inline;  
     }
     .username-input , .email-input{
         width: 63%; 
-        display: inline-block; /*********/
-        padding: 2.5px;/*********/
+        display: inline-block; 
         height: 18px;
-        border:0.5px solid #f2f2f2;
         border-radius: 8px;
-        font-family: Nunito;
-        color:  #202729;
-        font-size: 0.9375rem;
-        font-weight: 600;
-        text-align: left; 
-        background-color: rgb(255, 255, 255);
-        position: absolute; right: 0;
+        position: absolute; 
+        right: 0;
     }
     .username-input{
         margin-top: auto; margin-bottom: auto;  
@@ -585,38 +552,20 @@ body{
         margin-top: auto;
     }
     .modal-buttons-div{
-        position: absolute; 
-        width: 100%;
-        /**********/
         bottom: unset; 
         right: 0; 
         top: 6rem;
     }
-    .anonymous-btn , .save-btn{
-        font-family: Nunito; 
-        font-size: 0.9rem;
-        border: none;
-        border-radius: 1px;
-        font-weight: 300; 
-        padding-bottom: ''; /*******/
-        text-align: center;
-        height: '';/***********/
-        vertical-align: middle;
-        position: absolute; bottom:0; 
-
+    .anonymous-btn , .save-btn{ 
+        padding-bottom: ''; 
+        height: '';
     }
     .save-btn{
-       background:  linear-gradient(to bottom, #87d84e 0%, #56a572 100%);
-       color: #ffffff;
-       padding-left: 1.1rem; padding-right: 1.1rem; /********/
-       right: 0; 
+       padding-left: 1.1rem; padding-right: 1.1rem; 
+       
     }
     .anonymous-btn{
-        color: #31333F; 
-        background: linear-gradient(to bottom, rgb(205, 205, 205) 0%, rgb(183, 183, 183) 100%);
-        padding-left: 0.4rem; padding-right: 0.4rem; 
-        right: 4.9rem;/******/
-
+        right: 4.9rem;
     }
 
     .message-form{
