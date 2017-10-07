@@ -3,7 +3,7 @@
 
 window.addEventListener('load', function () {
 	var b = localStorage.getItem("babble");
-	console.log(b);
+	//console.log(b);
 	if ( b == null || JSON.parse(b).currentMessage == null) { // || b == "{}" || b == "null" || b == "") {
 		var emptyBabble={
 			currentMessage : null ,
