@@ -1,5 +1,4 @@
 "use strict";
-//adding two arrays to the global variable Babble 
 var Babble = {
     serverCounter: 0,
     lastMsgId: 0,
@@ -8,7 +7,7 @@ var Babble = {
 }
 
 
-//you can know the values of the room stats by the length of each array above using: Babble.users.length;
+//you can know the values of the room stats by the length of each array above using
 
 function addMessage(message) {    //the function return Number(id)
     Babble.serverCounter = Babble.serverCounter + 1;
@@ -22,16 +21,6 @@ function addMessage(message) {    //the function return Number(id)
         });
         gravatar = Babble.usersList[userIndex].gravatar;
     }
-    
-    /*newMessage = {
-        name: message.name,
-        email: message.email,
-        gravatar: gravatar,
-        message: message.message,
-        timestamp: message.timestamp,
-        id: Babble.serverCounter
-    }*/
-    //should use only this:
     message.gravatar = gravatar;
     message.id = Babble.serverCounter
     
@@ -45,10 +34,9 @@ function getMessages(counter) {
     messages = Babble.messagesList.filter(function (element) {
         return element.id > counter;
     });
-    //console.log("msgs : " + JSON.stringify(messages));
     return messages;
 }
-function deleteMessage(id) {  //pay attention,id is string***********
+function deleteMessage(id) {  //pay attention,id is string
     var idIndex = Babble.messagesList.findIndex(function (element) {
         return element.id == id;
     });
