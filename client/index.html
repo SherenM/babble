@@ -51,9 +51,10 @@
             </div>
 
             <form class="message-form" >
+                <label for="message" class="visuallyhidden">enter message: </label>
                 <div class="Growable js-growable">
                     <pre class="tr"><span class="sp"></span><br></pre>
-                    <textarea class="tr" onkeyup="keyUp()"></textarea>
+                    <textarea class="tr" onkeyup="keyUp()" id="message"></textarea>
                 </div>
 
                 <button  type="submit" aria-label="submit message" class="send-message-button">
